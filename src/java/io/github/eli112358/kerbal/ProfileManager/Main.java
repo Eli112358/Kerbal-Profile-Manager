@@ -1,34 +1,25 @@
 package io.github.eli112358.kerbal.ProfileManager;
 
 import java.io.File;
-import java.util.HashMap;
 public class Main {
-	public static File settingsFile;
-	public static HashMap<String, File> settings = new HashMap<>();
-	public static HashMap<String, File> mods = new HashMap<>();
-	public static HashMap<String, Profile> profiles = new HashMap<>();
+	public static Settings settings;
+	public static StoredMap<File> mods;
+	public static StoredMap<Profile> profiles;
 	public static void main(String[] args) {
+		if(System.getProperty(Settings.locationProperty) == null) {
+			setup();
+		}
+	}
+	public static void setup() {
 	}
 	public static void reloadAll() {
-		reloadMods();
-		reloadProfiles();
-		reloadSettings();
-	}
-	public static void reloadMods() {
-	}
-	public static void reloadProfiles() {
-	}
-	public static void reloadSettings() {
+		mods.reload();
+		profiles.reload();
+		settings.reload();
 	}
 	public static void saveAll() {
-		saveMods();
-		saveProfiles();
-		saveSettings();
-	}
-	public static void saveMods() {
-	}
-	public static void saveProfiles() {
-	}
-	public static void saveSettings() {
+		settings.save();
+		mods.save();
+		profiles.save();
 	}
 }

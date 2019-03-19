@@ -2,7 +2,7 @@ package io.github.eli112358.kerbal.ProfileManager;
 
 import java.io.File;
 import java.util.ArrayList;
-public class Profile {
+public class Profile implements Stored {
 	private boolean active = false;
 	private String name;
 	private File file;
@@ -15,6 +15,9 @@ public class Profile {
 	}
 	public String getName() {
 		return name;
+	}
+	public File getFile() {
+		return file;
 	}
 	public ArrayList<String> getMods() {
 		return mods;
@@ -31,11 +34,10 @@ public class Profile {
 	}
 	public void activate() {
 	}
+	@Override
 	public void reload() {
 	}
-	public File getFile() {
-		return file;
-	}
+	@Override
 	public void save() {
 	}
 }
