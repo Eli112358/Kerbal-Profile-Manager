@@ -36,4 +36,6 @@ public class Profile {
 	public File getFile() {
 		return file;
 	}
+	public void save() {
+	}
 }
