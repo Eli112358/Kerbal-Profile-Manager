@@ -1,4 +1,4 @@
 package io.github.eli112358.kerbal.ProfileManager.gui;
 
-public class MainWindow {
+public class UIManager {
 }
