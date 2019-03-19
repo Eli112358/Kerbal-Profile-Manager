@@ -9,7 +9,10 @@ public class Main {
 	public static HashMap<String, Profile> profiles = new HashMap<>();
 	public static void main(String[] args) {
 	}
-	public static void reload() {
+	public static void reloadAll() {
+		reloadMods();
+		reloadProfiles();
+		reloadSettings();
 	}
 	public static void reloadMods() {
 	}
@@ -17,7 +20,10 @@ public class Main {
 	}
 	public static void reloadSettings() {
 	}
-	public static void save() {
+	public static void saveAll() {
+		saveMods();
+		saveProfiles();
+		saveSettings();
 	}
 	public static void saveMods() {
 	}
