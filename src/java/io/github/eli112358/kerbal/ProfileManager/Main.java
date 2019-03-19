@@ -6,16 +6,16 @@ public class Main {
 	public static StoredMap<File> mods;
 	public static StoredMap<Profile> profiles;
 	public static void main(String[] args) {
-		if(System.getProperty(Settings.locationProperty) == null) {
+		if(Settings.getLocationProperty() == null) {
 			setup();
 		}
 	}
 	public static void setup() {
 	}
 	public static void reloadAll() {
+		settings.reload();
 		mods.reload();
 		profiles.reload();
-		settings.reload();
 	}
 	public static void saveAll() {
 		settings.save();
