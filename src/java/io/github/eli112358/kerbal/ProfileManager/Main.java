@@ -2,24 +2,27 @@ package io.github.eli112358.kerbal.ProfileManager;
 
 import java.io.File;
 public class Main {
-	public static Settings settings;
+	public static FolderLocation installLocation = new FolderLocation("game-install");
+	public static FolderLocation managerLocation = new FolderLocation("manager");
 	public static StoredMap<File> mods;
 	public static StoredMap<Profile> profiles;
 	public static void main(String[] args) {
-		if(Settings.getLocationProperty() == null) {
+		if(installLocation.getProperty() == null || managerLocation.getProperty() == null) {
 			setup();
 		}
 	}
-	public static void setup() {
-	}
 	public static void reloadAll() {
-		settings.reload();
+		installLocation.reload();
+		managerLocation.reload();
 		mods.reload();
 		profiles.reload();
 	}
 	public static void saveAll() {
-		settings.save();
+		installLocation.save();
+		managerLocation.save();
 		mods.save();
 		profiles.save();
+	}
+	private static void setup() {
 	}
 }
